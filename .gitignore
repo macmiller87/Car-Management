@@ -1,2 +1,6 @@
 .env
 .vscode
+.yarn
+node_modules
+src/prismaORM/generated
+
