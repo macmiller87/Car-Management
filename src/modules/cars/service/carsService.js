@@ -31,6 +31,11 @@ export class CarsService {
         return search;
     }
 
+    async ckeckCarLicensePlate(carLicensePlate) {
+        const find = await this.carsModel.findCarLicensePlate(carLicensePlate);
+        return find;
+    }
+
     async searchCarsByColor(color) {
         const search = await this.carsModel.findCarsByColor(color);
         return search;
@@ -43,6 +48,11 @@ export class CarsService {
 
     async findCarById(car_id) {
         const find = await this.carsModel.findCarById(car_id);
+        return find;
+    }
+
+    async findCarByName(carName) {
+        const find = await this.carsModel.findCarByName(carName);
         return find;
     }
 

@@ -68,6 +68,16 @@ export class CarsModel {
         return find;
     }
 
+    async findCarLicensePlate(carLicensePlate) {
+        const find = await this.prismaService.cars.findFirst({
+            where: {
+                carLicensePlate: carLicensePlate
+            }
+        });
+
+        return find;
+    }
+
     async findCarsByColor(color) {
         const find = await this.prismaService.cars.findMany({
             where: {
@@ -92,6 +102,16 @@ export class CarsModel {
         const find = await this.prismaService.cars.findFirst({
             where: {
                 id: car_id
+            }
+        });
+
+        return find;
+    }
+
+    async findCarByName(carName) {
+        const find = await this.prismaService.cars.findFirst({
+            where: {
+                carName: carName
             }
         });
 

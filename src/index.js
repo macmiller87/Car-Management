@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import { carsRegistrationRoutes } from "./routes/carsRegistration.routes.js";
 import { errorMidlleware } from "./utils/errors/errorMiddleware.js";
 import { driversRoutes } from "./routes/drivers.routes.js"; 
 import { carsRoutes } from "./routes/cars.routes.js";
@@ -11,5 +12,6 @@ app.use(cors());
 
 app.use(carsRoutes);
 app.use(driversRoutes);
+app.use(carsRegistrationRoutes);
 
 app.use(errorMidlleware);

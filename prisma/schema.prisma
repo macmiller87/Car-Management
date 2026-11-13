@@ -23,15 +23,14 @@ model Drivers {
 }
 
 model Cars_Registrations {
-  id             String   @id @default(uuid())
-  start_date     DateTime @default(now())
-  end_date       String   @default("")
-  driver_name    String   @unique
-  driver_id      String
-  driver         Drivers  @relation(fields: [driver_id], references: [id], onDelete: Cascade)
-  car_name       String
-  car_id         String
-  car            Cars     @relation(fields: [car_id], references: [id], onDelete: Cascade)
-  reason_for_use String
-  createdAt      DateTime @default(now())
+  id              String    @id @default(uuid())
+  start_date      DateTime  @default(now())
+  end_date        DateTime?
+  driver_name     String
+  driver          Drivers   @relation(fields: [driver_name], references: [name], onDelete: Cascade)
+  car_name        String
+  carLicensePlate String
+  car             Cars      @relation(fields: [carLicensePlate], references: [carLicensePlate], onDelete: Cascade)
+  reason_for_use  String
+  createdAt       DateTime  @default(now())
 }

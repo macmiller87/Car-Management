@@ -20,14 +20,20 @@ export class CarsController {
             const checkCarDatas = await Cars(carName, carLicensePlate, color, brand);
 
             if(checkCarDatas === true) {
-                const create = await this.carsService.createcar({
-                    carName,
-                    carLicensePlate,
-                    color,
-                    brand
-                });
+                const ckeckCarLicensePlate = await this.carsService.ckeckCarLicensePlate(carLicensePlate);
+                
+                if(!ckeckCarLicensePlate) {
+                    const create = await this.carsService.createcar({
+                        carName,
+                        carLicensePlate,
+                        color,
+                        brand
+                    });
+                    
+                    return response.status(201).json(create);
+                }
 
-                return response.status(201).json(create);
+                return response.status(401).json(new AppError("CarlicensePlate is already in use !", 401));
             }
 
             return response.status(checkCarDatas.statusCode).json({ error: checkCarDatas.message });
