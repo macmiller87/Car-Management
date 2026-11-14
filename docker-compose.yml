@@ -18,6 +18,24 @@ services:
     networks:
       - prisma-network
 
+  postgres_db_tests:
+    image: postgres
+    container_name: database_tests
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER_DOCKER2}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD_DOCKER2}
+      - POSTGRES_DB=${POSTGRES_DATABASE_DOCKER2}
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5  
+    networks:
+      - prisma-network
+
 networks:
   prisma-network:
     name: prisma-network

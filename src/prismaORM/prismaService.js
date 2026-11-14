@@ -7,7 +7,7 @@ export class PrismaService extends PrismaClient{
         const databaseUrl = process.env.DATABASE_URL; 
 
         super({
-            log: ["query"],
+            // log: ["query"],
             adapter: new PrismaPg({ connectionString: databaseUrl })
         });
 

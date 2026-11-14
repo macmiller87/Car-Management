@@ -2,5 +2,6 @@
 .vscode
 .yarn
 node_modules
+coverage
 src/prismaORM/generated
 
