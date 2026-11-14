@@ -317,7 +317,7 @@ describe("Cars Controller Tests, 'SearchAllCars", () => {
         expect(search.status).toBe(200);
     }); 
 
-    it("Should not be able to 'search' all cars, if any 'parameter' are wrongly defined", async () => {
+    it("Should not be able to 'search' all cars, if any 'parameter' are 'wrongly defined'", async () => {
 
         await request(app).post("/createCar").send({
             carName: "jetta",
