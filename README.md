@@ -122,4 +122,4 @@
 
 ### ✅ How to run the Tests of the App.
 
-- `IMPORT`, check and make sure to config the steps wrote in the section `🛠️ About .env.example file` then: first run `yarn docker:up`, when docker has been ok, type `yarn test` on your windown terminal.
+- `IMPORT`, check and make sure to config the steps wrote in the section `🛠️ About .env.example file` then: first run `yarn docker:up`, when docker has been ok type, `yarn setup:prisma` note, that just need to run for the first time, for configure `prismaORM` stuffs, then type `yarn test` on your windown terminal.
