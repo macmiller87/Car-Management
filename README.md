@@ -104,9 +104,9 @@
 
 - `IMPORTANT`, For finish after fill in the values of the variables, replace the values at the variable's name on `DATABASE_URL` variables.
 
-### 🛠️🚀 How to running this application
+### 🛠️🚀 How to run this application
 
-- After ckeck the previous steps, if you have a docker installed (if not, you will need to install), you just need to run the following comand `yarn docker:up`, after docker is ok, open a second terminal and run `yarn setup:prisma`, for configure `prismaORM` stuffs.
+- After ckeck the previous steps, if you have a docker installed (if not, you will need to install), you just need to run the following comand `yarn docker:up`, after docker is ok, open a second terminal and run `yarn setup:prisma`, note, that just need to run for the first time, for configure `prismaORM` stuffs, then you can run `yarn dev`.
 
 - Note if you are using a different package manager such as (npm, pnpm etc), just replace (yarn) at the previous step.
 
